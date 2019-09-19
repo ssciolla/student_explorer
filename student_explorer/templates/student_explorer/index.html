@@ -55,14 +55,14 @@
                     {% url 'seumich:advisor' advisor.username as mystudentsurl%}
                     {% url 'seumich:advisors_list' as advisorsurl %}
                     <ul class="nav navbar-nav">
-                        <li {% if request.path == abouturl %} class="active" {% endif %}>
-                            <a href="{% url 'about' %}">About</a>
-                        </li>
                         <li {% if request.path == mystudentsurl %} class="active" {% endif %}>
                             <a href="{% url 'seumich:index' %}" data-toggle="collapse" data-target="#navbar.in">My Students</a>
                         </li>
                         <li {% if request.path == advisorsurl %} class="active" {% endif %}>
                             <a href="{% url 'seumich:advisors_list' %}" data-toggle="collapse" data-target="#navbar.in">Advisors</a>
+                        </li>
+                        <li {% if request.path == abouturl %} class="active" {% endif %}>
+                            <a href="{% url 'about' %}">About</a>
                         </li>
                         <li>
                             <a href="https://documentation.its.umich.edu/node/831" target="_blank">
