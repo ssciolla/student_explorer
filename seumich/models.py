@@ -1,6 +1,7 @@
 from django.db import models
 from seumich.mixins import SeumichDataMixin
 from django.utils import timezone
+from django.utils.html import format_html
 
 import logging, statistics
 
@@ -407,6 +408,11 @@ class StudentClassSiteAssignment(models.Model, SeumichDataMixin):
         return 'near' if abs(difference) <= 5.0 else (
             'above' if difference > 0.0 else
             'below')
+
+    @property
+    def grader_comment_with_breaks(self):
+        updated_comment = self.grader_comment.replace("\\n", "<br><br />")
+        return format_html(f'"{updated_comment}"')
 
     def _percentage(self, x, y):
         if x is None:
