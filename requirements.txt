@@ -1,7 +1,6 @@
 # We're waiting on Django 3 until it's further into the lifecycle.
 Django>=2.2.9,<2.2.99
 djangosaml2==0.17.2
-django-cron>=0.5.1,<0.5.99
 django-debug-toolbar>=2.1,<2.1.99
 django-extensions>=2.2.6,<2.2.99
 django-mysql>=3.3.0,<3.3.99
